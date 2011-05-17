@@ -1,6 +1,6 @@
 class SqlTemplatesController < ApplicationController
   append_view_path SqlTemplate::Resolver.instance
-  layout 'sql_template'
+  #layout 'sql_template'
   
   # GET /sql_templates
   # GET /sql_templates.xml

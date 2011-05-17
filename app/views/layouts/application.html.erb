@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Templater</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<title>Template Generator</title>
+
+  	<%= stylesheet_link_tag "application" %>
+
+  	<%= javascript_include_tag :defaults %>
+  	<%= csrf_meta_tag %>
+	<%= yield(:head) %>	
 </head>
 <body>
+	<section id="container">
+		<header>
+			<h1><%= link_to "CMS Template Engine", root_path %></h1>
 
-<%= yield %>
+			<nav>
+				<ul>
+					<li><%= link_to "Home", root_path %></a></li>
+					<li><%= link_to "Templates", sql_templates_path %></a></li>
+				</ul>
+			</nav>
 
+		</header>
+
+		<section id="main-content">
+			<%= yield %>
+		</section>
+
+		<section id="subnav">
+		</section>
+	</section>
 </body>
 </html>
